@@ -15,8 +15,6 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $.getJSON('html.json', function(data) {
-
-                    alert(data);
                     $('#page_holder').pagify({
                         pages: data,
                         default: 'home',
@@ -35,7 +33,7 @@
                     {% include nav.html %}
                 </header>
 
-                <div id="page_holder"></div>
+                <div id="page_holder" class="page"></div>
 
             </div>
         </div>
