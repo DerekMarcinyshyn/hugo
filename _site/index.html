@@ -4,7 +4,9 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Hugo's Heart</title>
 
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
         <link href="http://fonts.googleapis.com/css?family=Cabin+Sketch:700|Love+Ya+Like+A+Sister" rel="stylesheet" type="text/css" />
+        <link href="/css/reset.css" rel="stylesheet" type="text/css" />
         <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
         <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
@@ -12,11 +14,15 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#page_holder').pagify({
-                    pages: ['about', 'donate'],
-                    animation: 'fadeIn',
-                    'default': 'about',
-                    cache: true
+                $.getJSON('html.json', function(data) {
+
+                    alert(data);
+                    $('#page_holder').pagify({
+                        pages: data,
+                        default: 'home',
+                        cache: true,
+                        animation: 'fadeIn'
+                    });
                 });
             });
         </script>
@@ -27,8 +33,12 @@
             <div class="container">
                 <header>
                     <nav>
-    <a href="#donate">Donate</a>
-    <a href="#about">About</a>
+    <ul>
+        <li><a href="#home"><img src="/img/hugos-heart.png" width="390" height="140" /></a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
                 </header>
 
