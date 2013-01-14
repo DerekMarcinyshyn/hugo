@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{{ page.title }}</title>
+
+        <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="/js/pagify.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#page_holder').pagify({
+                    pages: ['about', 'donate'],
+                    animation: 'fadeIn',
+                    'default': 'about',
+                    cache: true
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <header>
+                    {% include nav.html %}
+                </header>
+
+                <div id="page_holder"></div>
+
+            </div>
+        </div>
+    </body>
+</html>
